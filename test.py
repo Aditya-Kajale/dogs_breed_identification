@@ -61,3 +61,14 @@ if __name__ == "__main__":
         ori_image = cv2.putText(ori_image, ori_breed, (0, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
 
         cv2.imwrite(f"save/valid_{i}.png", ori_image)
+    count = 0
+    index = 0
+    for i in range(len(pre)):
+      if ori[index] == pre[index]:
+        count+=1
+      index+=1
+    # print(count) 
+
+
+    accuracy = count/len(pre)
+    print(accuracy)
